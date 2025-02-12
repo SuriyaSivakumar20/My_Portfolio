@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Cyberpunk Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: black;
+            font-family: "Orbitron", sans-serif;
+            color: cyan;
+            text-align: center;
+            scroll-behavior: smooth;
+            animation: fadeIn 3s ease-in-out;
+            position: relative;
+        }
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?stars') repeat;
+            opacity: 0.5;
+            z-index: -1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 50px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h1, h2, h3 {
+            text-shadow: 0px 0px 15px cyan;
+            font-size: 2.5rem;
+            animation: glowText 2s infinite alternate;
+        }
+        @keyframes glowText {
+            from { text-shadow: 0px 0px 15px cyan; }
+            to { text-shadow: 0px 0px 25px cyan; }
+        }
+        .profile-card, .info-box {
+            padding: 30px;
+            background: rgba(0, 255, 255, 0.15);
+            border-radius: 15px;
+            border: 2px solid cyan;
+            box-shadow: 0px 0px 15px cyan;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .resume-btn:hover, .project-card a:hover, .chat-widget:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px cyan;
+            transition: 0.3s ease-in-out;
+        }
+        .project-card {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px;
+            border: 2px solid cyan;
+            background: rgba(0, 255, 255, 0.15);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px cyan;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 25px cyan;
+            transition: 0.3s ease-in-out;
+        }
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: cyan;
+            color: black;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .certifications {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .certifications p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Cyberpunk Portfolio</h1>
+        <div class="profile-card">
+            <h2>Suriya Sivakumar</h2>
+            <p>🚀 Developer | AI Enthusiast | Innovator</p>
+            <p>💡 Skilled in Python, JavaScript,Cyber Security and AI</p>
+            <p>📌 Recent Projects: AI Chatbot, IPv6 Transmission, AI Phishing Detection</p>
+            <a href="resume.pdf" download>
+                <button class="resume-btn">Download Resume</button>
+            </a>
+            
+        </div>
+
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>AI Chatbot</h3>
+                <a href="https://github.com/SuriyaSivakumar20/Business-Intelligence-and-Resource-Development" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>IPv6 Transmission</h3>
+                <a href="https://github.com/SuriyaSivakumar20/Transition-Mechanism-of-IPV4-to-IPV6" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>AI Phishing Detection</h3>
+                <a href="https://github.com/SuriyaSivakumar20/AI-Phishing_detection" target="_blank">View Project</a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h2>Area of Interest</h2>
+            <p>🔹 Artificial Intelligence & Machine Learning</p>
+            <p>🔹 Cybersecurity & Ethical Hacking</p>
+            <p>🔹 Cloud Computing & DevOps</p>
+            <p>🔹 Prompt Engineering</p>
+            
+        </div>
+
+        <div class="info-box">
+            <h2>Achievements</h2>
+            <p>🏆 Secured IIIrd Prize in Paper Presentation at PTU</p>
+            <p>🏆 Developed AI Chatbot for Business Intelligence</p>
+            <p>🏆 Best Paper Award - SDG Theme</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Skills</h2>
+            <p>✔️ Cybersecurity: Network Security, Ethical Hacking</p>
+            <p>✔️ Programming: Python, Java, JavaScript, C</p>
+            <p>✔️ AI & ML: TensorFlow, OpenAI, NLP</p>
+            <p>✔️ Web Development: HTML, CSS</p>
+            <p>✔️ Cloud Computing </p>
+        </div>
+
+        <div class="certifications">
+            <h2>Certifications</h2>
+            <p>Google Cyber Security Certificate (Coursera)</p>
+            <p>Network and Usual Security (Swayam NPTEL)</p>
+            <p>AWS Cloud Computing Certificate (Ruddo)</p>
+            <p>Workshops on AI & LLM (NIT Puducherry)</p>
+            <p>Workshop on Cyber Security (IIT Madras)</p>  
+            <p>Cyber Security Certificate (Forage)</p>
+            <p>Python & C Programming Certificate</p>          
+            <p>HTML/CSS - Free Code Camp</p>
+            <p>Java - Spoken Tutorial</p>            
+        </div>
+    </div>
+
+    <div class="chat-widget">💬</div>
+</body>
+</html>
