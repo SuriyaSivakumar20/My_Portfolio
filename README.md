@@ -1,4 +1,4 @@
-# 🚀 Suriya Sivakumar's Futuristic 3D Portfolio 🌌  
+# 🚀 Suriya Sivakumar's  3D Portfolio 🌌  
 
 ![Portfolio Animation](https://readme-typing-svg.herokuapp.com?font=Orbitron&size=30&color=00FFFF&center=true&vCenter=true&width=600&height=60&lines=Welcome+to+My+Futuristic+Portfolio;AI+Developer+|+Innovator+|+Tech+Enthusiast;Exploring+Three.js+for+3D+Portfolio+Experience)
 
