@@ -3,130 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Cyberpunk Portfolio</title>
+    <title>Professional Engineering Portfolio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             margin: 0;
             overflow-x: hidden;
-            background: black;
-            font-family: "Orbitron", sans-serif;
-            color: cyan;
+            background: #e6f2ff;
+            font-family: "Poppins", sans-serif;
+            color: #333;
             text-align: center;
             scroll-behavior: smooth;
             animation: fadeIn 3s ease-in-out;
             position: relative;
         }
-        body::after {
-            content: "";
-            position: absolute;
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            background: url('https://source.unsplash.com/1600x900/?stars') repeat;
-            opacity: 0.5;
-            z-index: -1;
+            background: #002D62;
+            padding: 10px 0;
+            z-index: 1000;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #ffcc00;
         }
         .container {
             width: 80%;
             margin: auto;
-            padding-top: 50px;
+            padding-top: 80px;
             animation: slideIn 1.5s ease-in-out;
         }
-        @keyframes slideIn {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
         h1, h2, h3 {
-            text-shadow: 0px 0px 15px cyan;
             font-size: 2.5rem;
-            animation: glowText 2s infinite alternate;
+            color: #002D62;
         }
-        @keyframes glowText {
-            from { text-shadow: 0px 0px 15px cyan; }
-            to { text-shadow: 0px 0px 25px cyan; }
-        }
-        .profile-card, .info-box {
+        .profile-card {
             padding: 30px;
-            background: rgba(0, 255, 255, 0.15);
+            background: #cce5ff;
             border-radius: 15px;
-            border: 2px solid cyan;
-            box-shadow: 0px 0px 15px cyan;
+            border: 2px solid #002D62;
+            box-shadow: 0px 0px 10px #002D62;
             margin-bottom: 30px;
-            animation: float 3s ease-in-out infinite;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .info-box {
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            color: white;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: all 1s ease-in-out;
         }
-        .resume-btn:hover, .project-card a:hover, .chat-widget:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px cyan;
-            transition: 0.3s ease-in-out;
+        .info-box:nth-child(odd) {
+            background: #ffad99;
+            border: 2px solid #b85c00;
+        }
+        .info-box:nth-child(even) {
+            background: #99cc99;
+            border: 2px solid #008000;
         }
         .project-card {
             display: inline-block;
-            margin: 20px;
+            margin: 20px 10px;
             padding: 15px;
-            border: 2px solid cyan;
-            background: rgba(0, 255, 255, 0.15);
             border-radius: 10px;
-            box-shadow: 0px 0px 10px cyan;
-            animation: fadeIn 2s ease-in-out;
+            box-shadow: 0px 0px 10px #555;
+            background: #ffcc99;
+            border: 2px solid #cc6600;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .project-card:hover {
+            box-shadow: 0px 0px 20px #ff6600;
             transform: scale(1.05);
-            box-shadow: 0px 0px 25px cyan;
-            transition: 0.3s ease-in-out;
+        }
+        .resume-btn, .project-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .resume-btn {
+            background: #0044cc;
+            border: 2px solid #003399;
+            animation: bounce 2s infinite;
+        }
+        .resume-btn:hover {
+            background: #003399;
+        }
+        .project-card a {
+            background: #cc3300;
+            border: 2px solid #992600;
+        }
+        .project-card a:hover {
+            background: #992600;
         }
         .chat-widget {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: cyan;
-            color: black;
+            background: #002D62;
+            color: white;
             padding: 15px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.5rem;
-            animation: pulse 2s infinite;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+        /* Animation Classes */
+        .show {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
         }
-        .certifications {
-            font-family: "Poppins", sans-serif;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-        .certifications p {
-            margin: 10px 0;
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <h1>Welcome to My Cyberpunk Portfolio</h1>
+        <h1>Welcome to My Professional Engineering Portfolio</h1>
         <div class="profile-card">
             <h2>Suriya Sivakumar</h2>
             <p>🚀 Developer | AI Enthusiast | Innovator</p>
-            <p>💡 Skilled in Python, JavaScript,Cyber Security and AI</p>
+            <p>💡 Skilled in Python, JavaScript, Cyber Security, and AI</p>
             <p>📌 Recent Projects: AI Chatbot, IPv6 Transmission, AI Phishing Detection</p>
-            <a href="resume.pdf" download>
-                <button class="resume-btn">Download Resume</button>
-            </a>
-            
+            <a href="resume.pdf" download class="resume-btn">Download Resume</a>
         </div>
 
-        <h2>Projects</h2>
+        <h2 id="projects">Projects</h2>
         <div class="projects-container">
             <div class="project-card">
                 <h3>AI Chatbot</h3>
@@ -142,33 +183,23 @@
             </div>
         </div>
 
+        <div style="height: 40px;"></div> <!-- Tiny Space Added -->
+
         <div class="info-box">
-            <h2>Area of Interest</h2>
+            <h2 id="skills">Area of Interest</h2>
             <p>🔹 Artificial Intelligence & Machine Learning</p>
             <p>🔹 Cybersecurity & Ethical Hacking</p>
             <p>🔹 Cloud Computing & DevOps</p>
             <p>🔹 Prompt Engineering</p>
-            
         </div>
-
         <div class="info-box">
-            <h2>Achievements</h2>
+            <h2 id="achievements">Achievements</h2>
             <p>🏆 Secured IIIrd Prize in Paper Presentation at PTU</p>
             <p>🏆 Developed AI Chatbot for Business Intelligence</p>
             <p>🏆 Best Paper Award - SDG Theme</p>
         </div>
-
         <div class="info-box">
-            <h2>Skills</h2>
-            <p>✔️ Cybersecurity: Network Security, Ethical Hacking</p>
-            <p>✔️ Programming: Python, Java, JavaScript, C</p>
-            <p>✔️ AI & ML: TensorFlow, OpenAI, NLP</p>
-            <p>✔️ Web Development: HTML, CSS</p>
-            <p>✔️ Cloud Computing </p>
-        </div>
-
-        <div class="certifications">
-            <h2>Certifications</h2>
+            <h2 id="achievements"> Certifications</h2>
             <p>Google Cyber Security Certificate (Coursera)</p>
             <p>Network and Usual Security (Swayam NPTEL)</p>
             <p>AWS Cloud Computing Certificate (Ruddo)</p>
@@ -182,5 +213,24 @@
     </div>
 
     <div class="chat-widget">💬</div>
+
+    <script>
+        function handleScroll() {
+            let elements = document.querySelectorAll(".info-box, .project-card");
+            let windowHeight = window.innerHeight;
+            
+            elements.forEach(el => {
+                let position = el.getBoundingClientRect().top;
+                if (position < windowHeight - 100) {
+                    el.classList.add("show");
+                } else {
+                    el.classList.remove("show");
+                }
+            });
+        }
+        document.addEventListener("scroll", handleScroll);
+        window.onload = handleScroll;
+    </script>
+
 </body>
 </html>
